@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Martian+Mono:wght@300..800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #f5f1e8;
+  --color-ink: #111312;
+  --color-violet: #5b4bff;
+  --color-lime: #c7ff3d;
+  --color-orange: #ff704d;
+  --color-paper: #ede7d8;
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-mono: 'Martian Mono', ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: #f5f1e8;
+  color: #111312;
+  font-family: 'Martian Mono', ui-monospace, monospace;
+  /* subtle paper grain */
+  background-image:
+    radial-gradient(rgba(17, 19, 18, 0.028) 1px, transparent 1px),
+    radial-gradient(rgba(17, 19, 18, 0.02) 1px, transparent 1px);
+  background-size:
+    3px 3px,
+    7px 7px;
+  background-position:
+    0 0,
+    1px 2px;
+}
+
+/* Heavy expanded grotesque for display */
+.font-display {
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-weight: 900;
+  font-stretch: 125%;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+/* chunky black outline + hard offset shadow */
+.brutal {
+  border: 3px solid #111312;
+  box-shadow: 4px 4px 0 0 #111312;
+}
+.brutal-lift {
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+.brutal-lift:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 0 #111312;
+}
+
+/* clipped-corner paper ticket */
+.ticket {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+
+/* dotted guide line */
+.dotted-rule {
+  background-image: repeating-linear-gradient(
+    to right,
+    #111312 0,
+    #111312 3px,
+    transparent 3px,
+    transparent 7px
+  );
+}
+
+/* stepped tick animation for numbers */
+@keyframes tick-up {
+  0% {
+    transform: translateY(35%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.tick-up {
+  animation: tick-up 0.28s steps(4, end);
+}
+
+@keyframes step-flash {
+  0%,
+  100% {
+    filter: none;
+  }
+  40% {
+    filter: drop-shadow(0 0 0 #c7ff3d) brightness(1.4);
+  }
+}
+.step-flash {
+  animation: step-flash 0.6s ease;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-14px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in {
+  animation: slide-in 0.35s ease both;
+}
+
+::selection {
+  background: #5b4bff;
+  color: #f5f1e8;
+}
+
+/* hide scrollbar until scrolling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tick-up,
+  .step-flash,
+  .slide-in,
+  .brutal-lift {
+    animation: none !important;
+    transition: none !important;
+  }
+}

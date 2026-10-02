@@ -1,0 +1,43 @@
+# CUBIT web app — public repository
+
+# Secrets and local configuration (never publish)
+.env
+.env.*
+!.env.example
+*.local
+.dev.vars
+.dev.vars.*
+
+.figma/*
+!.figma/make/
+.figma/make/*
+!.figma/make/site.json
+src/imports/
+
+# Build output and dependencies
+node_modules/
+dist/
+build/
+.vite/
+.cache/
+test-results/
+playwright-report/
+*.tsbuildinfo
+vite.config.*.timestamp-*
+*.log
+.DS_Store
+
+# ---- from the original .gitignore ----
+node_modules/
+dist/
+build/
+.cache/
+.env*
+.vite/
+vite.config.*.timestamp-*
+*.tsbuildinfo
+*-debug.log*
+logs/
+*.log
+.tmp-*
+

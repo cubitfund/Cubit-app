@@ -1,0 +1,11 @@
+{
+  "source": "test/redesign/GovernanceReadsGas.t.sol:test_gas_fixedGovernanceGettersAt0_4000_20000Tranches",
+  "measurement": "vm.lastCallGas().gasTotalUsed; vm.cool before each getter; forge test -j 1 --isolate; unchanged vault bytecode",
+  "compiler": "solc 0.8.26, optimizer 10, via_ir, Cancun, metadata disabled",
+  "excludes": "Caller overhead, intrinsic transaction gas, HTTP/JSON envelopes, transport retries and data setup",
+  "byTrancheCount": {
+    "0": { "deployer": 438, "LOCK_DURATION": 263, "lockExtension": 2434, "held": 2428, "trancheCount": 2398, "nextTranche": 2538 },
+    "4000": { "deployer": 438, "LOCK_DURATION": 263, "lockExtension": 2434, "held": 2428, "trancheCount": 2398, "nextTranche": 2538, "tranche": 9243 },
+    "20000": { "deployer": 438, "LOCK_DURATION": 263, "lockExtension": 2434, "held": 2428, "trancheCount": 2398, "nextTranche": 2538, "tranche": 9243 }
+  }
+}

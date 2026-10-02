@@ -1,0 +1,14 @@
+{
+  "title": "cubit.fund",
+  "description": "CUBIT is a Uniswap v4 token built on a different idea: the exits pay for the support. 12% of the ETH from every sale is placed as a wall of ETH sitting under the market, and it's placed by that same sale, in that same transaction, with nobody in the loop. Other tokens lose their bid when people sell. CUBIT builds its bid out of the selling.",
+  "icons": {
+    "icon": "/favicon.svg"
+  },
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
